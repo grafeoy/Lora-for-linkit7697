@@ -1,0 +1,45 @@
+#include <SPI.h>
+#include <LoRa.h>
+#include <DHT.h>
+
+DHT dht2(4,DHT22);
+
+int MoisturePin = A0;
+int Moisture = 0;
+
+void setup() {
+  Serial.begin(9600);
+  while (!Serial);
+
+  Serial.println("LoRa Sender");
+
+  if (!LoRa.begin(915E6)) {
+    Serial.println("Starting LoRa failed!");
+    while (1);
+  }
+}
+
+void loop() {
+  //Sensor Value
+  int t,h;
+
+  //seeed co.,Ltd Sensor
+  //t = dht2.readTemperature();
+  //h = dht2.readHumidity();
+  //Moisture = analogRead(MoisturePin);
+  //Serial.print(h);
+  //Serial.print(t);
+  //Serial.print(Moisture);
+
+
+  //LoRa Sender 
+  Serial.print("Sending packet\t");
+  // send packet
+  LoRa.beginPacket();
+  //LoRa.print(h);
+  //LoRa.print(t);
+  //LoRa.print(Moisture);
+  LoRa.endPacket();
+  
+  delay(15000);
+}
