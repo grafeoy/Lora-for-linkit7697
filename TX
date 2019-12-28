@@ -1,6 +1,6 @@
-#include <SPI.h>
-#include <LoRa.h>
-#include <DHT.h>
+#include "SPI.h"
+#include "LoRa.h"
+#include "DHT.h"
 
 DHT dht2(4,DHT22);
 
