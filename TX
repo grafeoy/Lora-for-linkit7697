@@ -24,21 +24,21 @@ void loop() {
   int t,h;
 
   //seeed co.,Ltd Sensor
-  //t = dht2.readTemperature();
-  //h = dht2.readHumidity();
-  //Moisture = analogRead(MoisturePin);
-  //Serial.print(h);
-  //Serial.print(t);
-  //Serial.print(Moisture);
+  t = dht2.readTemperature();
+  h = dht2.readHumidity();
+  Moisture = analogRead(MoisturePin);
+  Serial.print(h);
+  Serial.print(t);
+  Serial.print(Moisture);
 
 
   //LoRa Sender 
   Serial.print("Sending packet\t");
   // send packet
   LoRa.beginPacket();
-  //LoRa.print(h);
-  //LoRa.print(t);
-  //LoRa.print(Moisture);
+  LoRa.print(h);
+  LoRa.print(t);
+  LoRa.print(Moisture);
   LoRa.endPacket();
   
   delay(15000);
