@@ -1,7 +1,7 @@
 # Lora-and-linkit7697
 
 在兩臺Linkit 7697上進行簡單的LoRa單向傳輸\
-使用Arduino\
+使用ArduinoIDE\
 使用https://github.com/sandeepmistry/arduino-LoRa 程式庫\
 以seeed的sensor為範例 空氣溫溼度、土壤濕度\
 Lora裝置是使用mini LoRa，不過沒用到AT指令就是了，畢竟是「簡單的」範例
